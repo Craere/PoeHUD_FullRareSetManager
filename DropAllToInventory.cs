@@ -23,7 +23,12 @@ namespace FullRareSetManager
         public bool SwitchToTab(int tabIndex, FullRareSetManagerSettings Settings)
         {
             var latency = (int) GameController.Game.IngameState.CurLatency;
-
+            //just use the arrowkey method if we only need to switch to nearby stashtabs
+            var difference = tabIndex - GameController.Game.IngameState.IngameUi.StashElement.IndexVisibleStash;
+            if (difference <= 3 && difference >= -3)
+            {
+                return SwitchToTabViaArrowKeys(tabIndex);
+            }
             // We don't want to Switch to a tab that we are already on
             var openLeftPanel = GameController.Game.IngameState.IngameUi.OpenLeftPanel;
 

@@ -886,6 +886,7 @@ namespace FullRareSetManager
                 case "Sceptre": return StashItemType.OneHanded;
                 case "Wand": return StashItemType.OneHanded;
                 case "Dagger": return StashItemType.OneHanded;
+                case "Rune Dagger": return StashItemType.OneHanded;
                 case "Claw": return StashItemType.OneHanded;
                 case "Shield": return StashItemType.OneHanded;
 
